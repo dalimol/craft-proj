@@ -1,0 +1,39 @@
+dateModified: 1718066445
+email:
+  fromEmail: dalimol.a@gmail.com
+  fromName: 'My craft'
+  transportType: craft\mail\transportadapters\Sendmail
+fs:
+  filesyetempath:
+    hasUrls: true
+    name: FileSyetemPath
+    settings:
+      path: '@webroot/uploads/images'
+    type: craft\fs\Local
+    url: 'http://localhost:8000/uploads/images'
+meta:
+  __names__:
+    0a2057b3-e269-4a08-b123-5a7d1f9ae8a5: 'My craft' # My craft
+    0b236e77-968c-452f-9c44-dfb464367667: 'Event categories' # Event categories
+    0872da95-a6c7-426a-9185-9580a86b43d0: 'Sold Out' # Sold Out
+    3054dc61-71d0-4071-8035-ec9e789cf1a3: Featured # Featured
+    34189348-2b5f-4579-b711-c9e1fdb5e50c: 'category  items' # category  items
+    bdecb173-e396-42e9-9671-134fd3c3bcd5: image-upload # image-upload
+    c5c790d4-6c4b-444e-b659-c8341441d145: Wrapper # Wrapper
+    d14e32c7-b8fe-4d61-a0a5-07f0a29a718b: 'Event Date' # Event Date
+    d90face8-284c-4404-af9c-e1b4e925b17a: image # image
+    dacafd8a-c18a-4879-9116-941a2965876e: 'Public Schema' # Public Schema
+    fa1ce07c-514e-4b50-97ff-102eca402803: 'My craft' # My craft
+system:
+  edition: solo
+  live: true
+  name: 'My craft'
+  schemaVersion: 5.0.0.20
+  timeZone: America/Los_Angeles
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: null
+  photoVolumeUid: null
+  require2fa: false
+  requireEmailVerification: true

@@ -1,0 +1,32 @@
+columnSuffix: null
+handle: soldOut
+instructions: null
+name: 'Sold Out'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Yes'
+        -
+          - value
+          - 'yes'
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'No'
+        -
+          - value
+          - 'no'
+        -
+          - default
+          - '1'
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\RadioButtons

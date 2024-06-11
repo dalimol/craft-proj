@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		<meta charset="utf-8"/>
+		<title>Welcome to Craft CMS</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"/>
+		<meta name="referrer" content="origin-when-cross-origin"/>
+		<link rel="stylesheet" href="css/main.css">
+
+	</head>
+	<body class="ltr">
+		<main
+			class="main-container">
+			<!-- include "partial-header.html" -->
+			<section class="section section--on-top tabs js-tabs whats-on tabbed-content" id="whatsOn">
+				<div class="wrapper wrapper--even whats-on__wrapper stagger-children">
+					<div class="wrapper__col stagger-child">
+						<h2 class="h4 whats-on__heading">Shows</h2>
+					</div>
+
+					<div class="wrapper__col"></div>
+
+					<div class="wrapper__col stagger-child">
+						<div class="tabs__nav">
+							<ul class="tabs__list tab-navigation">
+								<li class="tabs__item" data-tab-target="just-announced">
+									<button class="tabs__link tabs__link--active js-tabs__link js-tabs__link--active">
+										Just Announced
+									</button>
+								</li>
+
+								<li class="tabs__item" data-tab-target="upcoming">
+									<button class="tabs__link js-tabs__link">
+										Upcoming
+									</button>
+								</li>
+
+								<li class="tabs__item" data-tab-target="featured">
+									<button class="tabs__link js-tabs__link">
+										Featured
+									</button>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="wrapper wrapper--wide whats-on__wrapper tabs">
+					<div class="tabs__panel" data-tab-id="just-announced">
+						{% set entries = craft.entries()
+					.section('wrapper')
+					.orderBy('postDate desc') 
+					.limit(6) 
+					.all() %}
+
+						{% if entries|length %}
+							{% for entry in entries %}
+								<article class="card-link" style="transition-delay: 0s;">
+									{% if entry.image.one() %}
+										<div class="card-link__image">
+											<a href="/events/paul-heaton-and-jacqui-abbott" class="card-link__image-link">
+												<picture>
+													<!-- 400 x 400 -->
+													<img src="{{ entry.image.one().url }}" alt="{{ entry.image.one().title }}">
+												</picture>
+											</a>
+
+										</div>
+									{% endif %}
+
+									<div class="card-link__content">
+										<div class="card-link__titles">
+											<h3 class="h4 card-link__heading">
+												<a class="card-link__heading-link" href="/events/paul-heaton-and-jacqui-abbott">{{ entry.title }}</a>
+											</h3>
+											<p class="card-link__sub-heading">
+												<time datetime="2022-01-16">{{entry.eventDate !=""?( entry.eventDate|date('F j, Y')):"Not announced yet" }}</time>
+											</p>
+										</div>
+
+										<div class="card-link__info">
+											<ul class="card-link__list"></ul>
+
+											<div class="card-link__ctas">
+												<div class="inline-ctas">
+													<a href="/events/paul-heaton-and-jacqui-abbott" class="inline-ctas__cta text-pink">
+														<span class="inline-ctas__text">Learn more</span>
+														<i class="icon-right-arrow inline-ctas__arrow"></i>
+													</a>
+
+
+													{% if entry.soldOut == 'yes' %}
+
+														<span class="inline-ctas__cta text-white">
+															<i class="icon-sold-out inline-ctas__icon"></i>
+															<span class="inline-ctas__text">Sold Out</span>
+														</span>
+													{% elseif entry.eventDate == "" %}
+
+														<a href="#" class="inline-ctas__cta text-white" download="">
+															<i class="icon-calendar inline-ctas__icon"></i>
+															<span class="inline-ctas__text">Remind me</span>
+															<i class="icon-right-arrow inline-ctas__arrow"></i>
+														</a>
+													{% else %}
+
+
+														<a href="/events/paul-heaton-and-jacqui-abbott" target="_blank" rel="noreferrer" class="inline-ctas__cta text-white">
+															<i class="icon-ticket inline-ctas__icon"></i>
+															<span class="inline-ctas__text">Buy Now</span>
+															<i class="icon-right-arrow inline-ctas__arrow"></i>
+														</a>
+
+													{% endif %}
+
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</article>
+							{% endfor %}
+
+						{% else %}
+							<p>No entries found.</p>
+						{% endif %}
+
+					</div>
+					{# Upcoming event #}
+					<div class="tabs__panel" data-tab-id="upcoming">
+						{% set today = now | date('Y-m-d') %}
+
+
+						{% set entries = craft.entries()
+								.section('wrapper')
+								.eventDate('>= ' ~ today)
+								.orderBy('eventDate asc') 
+								.limit(6) 
+								.all() %}
+
+						{% if entries|length %}
+							{% for entry in entries %}
+								<article class="card-link" style="transition-delay: 450ms;">
+									{% if entry.image.one() %}
+										<div class="card-link__image">
+											<a href="/events/abba-orchestral" class="card-link__image-link">
+												<picture>
+													<img src="{{ entry.image.one().url }}" alt="{{ entry.image.one().title }}">
+												</picture>
+											</a>
+										</div>
+									{% endif %}
+									<div class="card-link__content">
+										<div class="card-link__titles">
+											<h3 class="h4 card-link__heading">
+												<a class="card-link__heading-link" href="/events/abba-orchestral">{{ entry.title }}
+												</a>
+											</h3>
+											<p class="card-link__sub-heading">
+												<time datetime="2022-02-12">{{ entry.eventDate !=""?( entry.eventDate|date('F j, Y')):"Not announced yet" }}</time>
+											</p>
+										</div>
+
+										<div class="card-link__info">
+											<ul class="card-link__list"></ul>
+
+											<div class="card-link__ctas">
+												<div class="inline-ctas">
+													<a href="/events/abba-orchestral" class="inline-ctas__cta text-pink">
+														<span class="inline-ctas__text">Learn more</span>
+														<i class="icon-right-arrow inline-ctas__arrow"></i>
+													</a>
+
+													{% if entry.soldOut == 'yes' %}
+														<span class="inline-ctas__cta text-white">
+															<i class="icon-sold-out inline-ctas__icon"></i>
+															<span class="inline-ctas__text">Sold Out</span>
+														</span>
+													{% elseif entry.eventDate == "" %}
+														<a href="#" class="inline-ctas__cta text-white" download="">
+															<i class="icon-calendar inline-ctas__icon"></i>
+															<span class="inline-ctas__text">Remind me</span>
+															<i class="icon-right-arrow inline-ctas__arrow"></i>
+														</a>
+													{% else %}
+														<a href="/events/paul-heaton-and-jacqui-abbott" target="_blank" rel="noreferrer" class="inline-ctas__cta text-white">
+															<i class="icon-ticket inline-ctas__icon"></i>
+															<span class="inline-ctas__text">Buy Now</span>
+															<i class="icon-right-arrow inline-ctas__arrow"></i>
+														</a>
+
+													{% endif %}
+
+												</div>
+											</div>
+										</div>
+									</div>
+								</article>
+							{% endfor %}
+
+						{% else %}
+							<p>No entries found.</p>
+						{% endif %}
+					</div>
+					{# Featured events#}
+					<div class="tabs__panel" data-tab-id="featured">
+
+						{% set entries = craft.entries()
+							.section('wrapper')
+							.featured('yes')  
+							.orderBy('id DESC')  
+							.limit(6)
+							.all() 
+						%}
+
+						{% if entries|length %}
+							{% for entry in entries %}
+								<article class="card-link" style="transition-delay: 0s;">
+									{% if entry.image.one() %}
+										<div class="card-link__image">
+											<a href="/events/the-war-on-drugs" class="card-link__image-link">
+												<picture>
+													<img src="{{ entry.image.one().url }}" alt="{{ entry.image.one().title }}">
+												</picture>
+											</a>
+										</div>
+									{% endif %}
+
+									<div class="card-link__content">
+										<div class="card-link__titles">
+											<h3 class="h4 card-link__heading">
+												<a class="card-link__heading-link" href="/events/the-war-on-drugs">{{ entry.title }}
+												</a>
+											</h3>
+											<p class="card-link__sub-heading">
+												Dates to be announced
+											</p>
+										</div>
+
+										<div class="card-link__info">
+											<ul class="card-link__list">
+												<li class="card-link__item">
+													<span class="card-link__item-title">On Sale</span>
+													<span class="card-link__item-description">
+														<time datetime="2022-04-02T11:30">{{ entry.eventDate !=""?( entry.eventDate|date('F j, Y')):"Not announced yet" }}</time>
+													</span>
+												</li>
+
+											</ul>
+
+											<div class="card-link__ctas">
+												<div class="inline-ctas">
+													<a href="/events/the-war-on-drugs" class="inline-ctas__cta text-pink">
+														<span class="inline-ctas__text">Learn more</span>
+														<i class="icon-right-arrow inline-ctas__arrow"></i>
+													</a>
+
+													{% if entry.soldOut == 'yes' %}
+														<span class="inline-ctas__cta text-white">
+															<i class="icon-sold-out inline-ctas__icon"></i>
+															<span class="inline-ctas__text">Sold Out</span>
+														</span>
+													{% elseif entry.eventDate == "" %}
+														<a href="#" class="inline-ctas__cta text-white" download="">
+															<i class="icon-calendar inline-ctas__icon"></i>
+															<span class="inline-ctas__text">Remind me</span>
+															<i class="icon-right-arrow inline-ctas__arrow"></i>
+														</a>
+													{% else %}
+														<a href="/events/paul-heaton-and-jacqui-abbott" target="_blank" rel="noreferrer" class="inline-ctas__cta text-white">
+															<i class="icon-ticket inline-ctas__icon"></i>
+															<span class="inline-ctas__text">Buy Now</span>
+															<i class="icon-right-arrow inline-ctas__arrow"></i>
+														</a>
+													{% endif %}
+												</div>
+											</div>
+										</div>
+									</div>
+								</article>
+							{% endfor %}
+
+						{% else %}
+							<p>No entries found.</p>
+						{% endif %}
+
+					</div>
+				</div>
+				<div class="whats-on__footer">
+					<a href="{{ url('events') }}" class="button">View All Shows</a>
+				</div>
+			</section>
+
+		</main>
+
+		<!-- All JS actions that are site wide should be in this file -->
+		<script src="js/vendors.js" id="vendorsScript"></script>
+		<script src="js/main.js" id="mainScript"></script>
+
+
+		<script src="js/homepage.js"></script>
+	</body>
+</html>

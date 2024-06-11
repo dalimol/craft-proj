@@ -1,0 +1,22 @@
+columnSuffix: null
+handle: eventCategories
+instructions: null
+name: 'Event categories'
+searchable: false
+settings:
+  allowSelfRelations: false
+  branchLimit: null
+  localizeRelations: false
+  maintainHierarchy: false
+  maxRelations: null
+  minRelations: null
+  selectionLabel: null
+  showCardsInGrid: false
+  showSiteMenu: false
+  source: 'group:801f2a2f-e75b-4690-a4d9-e1e730589385'
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: list
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Categories

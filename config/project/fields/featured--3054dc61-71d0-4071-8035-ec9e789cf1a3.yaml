@@ -1,0 +1,43 @@
+columnSuffix: null
+handle: featured
+instructions: null
+name: Featured
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Select
+        -
+          - value
+          - ''
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Yes'
+        -
+          - value
+          - 'yes'
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'No'
+        -
+          - value
+          - 'no'
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

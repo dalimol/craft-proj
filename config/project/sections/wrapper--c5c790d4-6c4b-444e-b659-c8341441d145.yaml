@@ -1,0 +1,27 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  - 34189348-2b5f-4579-b711-c9e1fdb5e50c # category  items
+handle: wrapper
+maxAuthors: 1
+name: Wrapper
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  fa1ce07c-514e-4b50-97ff-102eca402803: # My craft
+    enabledByDefault: true
+    hasUrls: true
+    template: wrapper/_entry
+    uriFormat: 'wrapper/{slug}'
+type: channel

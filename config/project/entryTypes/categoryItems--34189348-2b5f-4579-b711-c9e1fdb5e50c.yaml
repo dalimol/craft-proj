@@ -1,0 +1,110 @@
+color: null
+fieldLayouts:
+  8c7e55a5-c07a-41d7-b35e-c4c429b242aa:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 5a7260e9-a39d-48b5-a053-37084fc878bb
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: d90face8-284c-4404-af9c-e1b4e925b17a # image
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 41c43672-26a1-40bc-9ca7-040ebf3f54dd
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 3054dc61-71d0-4071-8035-ec9e789cf1a3 # Featured
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: beca6b9c-1117-4054-9f17-c7e842b6c87d
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 0872da95-a6c7-426a-9185-9580a86b43d0 # Sold Out
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d82c5e16-5553-44c2-936f-0cd55474caca
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: d14e32c7-b8fe-4d61-a0a5-07f0a29a718b # Event Date
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6cb9272a-fe09-4a49-811c-fd36e89303c4
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: e767f3c2-7082-4539-90ed-6b165a8fc351
+        userCondition: null
+handle: categoryItems
+hasTitleField: true
+icon: ''
+name: 'category  items'
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: ''
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
