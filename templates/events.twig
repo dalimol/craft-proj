@@ -3,16 +3,14 @@
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 		<meta charset="utf-8"/>
-		<title>Welcome to Craft CMS</title>
+		<title>All Events</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"/>
 		<meta name="referrer" content="origin-when-cross-origin"/>
 		<link rel="stylesheet" href="css/main.css">
 
 	</head>
 	<body class="ltr">
-		<main
-			class="main-container">
-			<!-- include "partial-header.html" -->
+		<main class="main-container">
 			<section class="section section--on-top tabs js-tabs whats-on tabbed-content" id="whatsOn">
 				<div class="wrapper wrapper--even whats-on__wrapper stagger-children">
 					<div class="wrapper__col stagger-child">
@@ -25,21 +23,15 @@
 						<div class="tabs__nav">
 							<ul class="tabs__list tab-navigation d-none" style="display:none">
 								<li class="tabs__item" data-tab-target="just-announced">
-									<button class="tabs__link tabs__link--active js-tabs__link js-tabs__link--active">
-									
-									</button>
+									<button class="tabs__link tabs__link--active js-tabs__link js-tabs__link--active"></button>
 								</li>
 
 								<li class="tabs__item" data-tab-target="upcoming">
-									<button class="tabs__link js-tabs__link">
-									
-									</button>
+									<button class="tabs__link js-tabs__link"></button>
 								</li>
 
 								<li class="tabs__item" data-tab-target="featured">
-									<button class="tabs__link js-tabs__link">
-										
-									</button>
+									<button class="tabs__link js-tabs__link"></button>
 								</li>
 							</ul>
 						</div>
@@ -60,7 +52,6 @@
 										<div class="card-link__image">
 											<a href="/events/paul-heaton-and-jacqui-abbott" class="card-link__image-link">
 												<picture>
-													<!-- 400 x 400 -->
 													<img src="{{ entry.image.one().url }}" alt="{{ entry.image.one().title }}">
 												</picture>
 											</a>
@@ -119,18 +110,14 @@
 						{% endif %}
 
 					</div>
-				
+
 				</div>
-				
+
 			</section>
 
 		</main>
-
-		<!-- All JS actions that are site wide should be in this file -->
 		<script src="js/vendors.js" id="vendorsScript"></script>
 		<script src="js/main.js" id="mainScript"></script>
-
-
 		<script src="js/homepage.js"></script>
 	</body>
 </html>
